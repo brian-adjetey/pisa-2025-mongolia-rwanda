@@ -10,14 +10,16 @@ Brian Adjetey & Anar Amarjargal.
 ## The data
 
 The test is PISA, run every three years by the OECD. It is given to 15-year-olds and covers
-reading, maths, and science. Around 80 countries took part in the 2025 round, including both of
-ours — Rwanda for the first time, Mongolia as a partner country. Anyone can download the results
+reading, maths, and science. 91 countries and economies took part in the 2025 round, including both of ours — Rwanda for the first time, Mongolia as a partner country. Anyone can download the results
 for free.
 
 | What | Where |
 |---|---|
 | The official download page | [OECD PISA 2025 Database](https://www.oecd.org/en/data/datasets/pisa-2025-database.html) |
 | A copy of the two files we use | [Google Drive folder](https://drive.google.com/drive/folders/1Me0GPML6cYotrSabFRuJkklFSHpzSk8F?usp=drive_link) |
+
+Of the 755,721 students in the 2025 student file, 13,768 are ours: 7,146 in Mongolia and 6,622 in
+Rwanda, attending 404 schools between them.
 
 The OECD splits the results into seven files. We only need two of them:
 
@@ -45,7 +47,6 @@ need that program: the `pyreadstat` package opens these files in Python as an or
 same kind of table pandas uses everywhere else.
 
 From there the work is mostly narrowing things down. The files hold every country, so we keep only
-the Mongolian and Rwandan rows. They hold about 1,750 columns between them, so we keep the 40 or so
-we actually need. And each student's school is listed separately, so we copy each school's details
+the Mongolian and Rwandan rows. They hold 1,343 columns between them, so we keep the 40 or so we actually need. And each student's school is listed separately, so we copy each school's details
 onto the rows of the students who attend it. What comes out is one small table with one row per
 student, which is what the rest of the analysis reads.
