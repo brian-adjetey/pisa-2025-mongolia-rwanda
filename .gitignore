@@ -1,0 +1,25 @@
+# --- raw data: never committed ---------------------------------------------
+# PISA public-use files are far too large for GitHub (the student file alone is
+# 2.1 GB uncompressed; GitHub rejects anything over 100 MB). Download them from
+# OECD or from the Drive folder linked in the README.
+data/
+*.zip
+*.sav
+
+# --- course material, not ours to publish ----------------------------------
+requirements/
+
+# --- private working notes --------------------------------------------------
+PROJECT_BRIEF.md
+PROJECT_BRIEF.html
+Brian's Workflow.md
+research questions generally.txt
+
+# --- generated artefacts ---------------------------------------------------
+codebook_*.csv
+.ipynb_checkpoints/
+__pycache__/
+*.pyc
+.venv/
+venv/
+.DS_Store
