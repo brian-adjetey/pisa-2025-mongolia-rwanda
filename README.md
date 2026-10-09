@@ -1,69 +1,35 @@
 # PISA 2025: Mongolia vs. Rwanda
 
-Final project for **90-819 Python Programming II** at Carnegie Mellon University.
+Final project for 90-819 Python Programming II at Carnegie Mellon University.
 
-**Authors:** Brian Adjetey and Anar Amarjargal
+Brian Adjetey & Anar Amarjargal
 
 ## Research question
 
-How does mathematics performance in PISA 2025 differ between Mongolia and Rwanda, and how is performance within each country associated with student socioeconomic status and school conditions? How do the two countries compare with a pooled OECD comparison group?
-
-The analysis is descriptive rather than causal. It uses PISA student sampling weights and all 10 plausible values for mathematics, reading, and science.
+How does mathematics performance in PISA 2025 differ between Mongolia and Rwanda, and how is performance within each country associated with student socioeconomic status and school conditions? How do the two countries compare with OECD countries?
 
 ## Data
 
-The project uses the OECD PISA 2025 public-use student and school files.
+We use the PISA 2025 student and school public-use files from the OECD.
 
-| File | Unit of observation | Approx. uncompressed size |
-|---|---|---:|
-| `CY09_MS_STU_PUF.sav` | Student | 2.1 GB |
-| `CY09_MS_SCH_PUF.sav` | School | 17.9 MB |
+- `CY09_MS_STU_PUF.sav` — student file
+- `CY09_MS_SCH_PUF.sav` — school file
 
-- [OECD PISA 2025 database](https://www.oecd.org/en/data/datasets/pisa-2025-database.html)
-- [Google Drive copy used by the notebook](https://drive.google.com/drive/folders/1Me0GPML6cYotrSabFRuJkklFSHpzSk8F?usp=drive_link)
+The raw student file is too large for GitHub, so it is not stored in this repository. The notebook downloads both files directly from the shared Google Drive folder used for the project.
 
-The raw `.sav` files are not committed to GitHub because the student file exceeds GitHub's file-size limit. The notebook downloads both files automatically with `gdown`, so the analysis can still be reproduced from the repository.
+OECD source: https://www.oecd.org/en/data/datasets/pisa-2025-database.html
 
-## Repository structure
+Shared files: https://drive.google.com/drive/folders/1Me0GPML6cYotrSabFRuJkklFSHpzSk8F?usp=drive_link
 
-```text
-.
-├── PISA_2025_Mongolia_Rwanda_Insight_Report.ipynb
-├── cleaned_data/
-│   ├── student_analysis_clean.parquet
-│   └── school_analysis_clean.parquet
-├── results/
-│   └── *.csv
-├── requirements.txt
-├── README.md
-└── .gitignore
-```
+## Running the analysis
 
-`cleaned_data/` contains the analysis-ready datasets exported by the notebook. `results/` contains the main summary tables used in the report.
+Open the notebook and run the cells from top to bottom. It downloads the two source files, cleans the variables used in the analysis, creates the comparison groups, calculates the weighted PISA results, and produces the tables and figures in the report.
 
-## Reproduce the analysis
+The analysis uses student sampling weights and all 10 plausible values for the achievement estimates. The OECD group is used as a pooled comparison group rather than as an official OECD average.
 
-1. Clone or download this repository.
-2. Install the dependencies:
+## Repository files
 
-```bash
-pip install -r requirements.txt
-```
-
-3. Open `PISA_2025_Mongolia_Rwanda_Insight_Report.ipynb` in Google Colab or Jupyter.
-4. Run the notebook from top to bottom.
-
-The notebook will:
-- download the two PISA public-use files;
-- select the required student and school variables;
-- recode missing values and define Mongolia, Rwanda, and OECD comparison groups;
-- calculate weighted achievement estimates across all 10 plausible values;
-- compare student and school characteristics;
-- examine mathematics performance by gender, grade repetition, ESCS, school location, and educational material shortages;
-- calculate weighted correlations with ESCS, material shortages, and staff shortages;
-- generate the report visualizations;
-- export cleaned analysis datasets and result tables.
-
-## Methodological note
-
-The OECD comparison is a pooled comparison group based on the student sampling weights in the selected OECD observations; it should not be interpreted as the official equal-country OECD average. The project reports descriptive associations and does not make causal claims. Formal PISA replicate-weight standard errors and hypothesis tests are outside the scope of this course project.
+- `PISA_2025_Mongolia_Rwanda_Insight_Report.ipynb` — full cleaning, analysis, and visualizations
+- `results/` — summary tables from the analysis
+- `requirements.txt` — Python packages used by the notebook
+- `.gitignore` — keeps the large raw data files out of the repository
