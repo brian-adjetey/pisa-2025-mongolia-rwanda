@@ -12,8 +12,8 @@ How does mathematics performance in PISA 2025 differ between Mongolia and Rwanda
 
 We use the PISA 2025 student and school public-use files from the OECD.
 
-- `CY09_MS_STU_PUF.sav` — student file
-- `CY09_MS_SCH_PUF.sav` — school file
+- `CY09_MS_STU_PUF.sav` - student file
+- `CY09_MS_SCH_PUF.sav` - school file
 
 The raw student file is too large for GitHub, so it is not stored in this repository. The notebook downloads both files directly from the shared Google Drive folder used for the project.
 
@@ -29,7 +29,7 @@ The analysis uses student sampling weights and all 10 plausible values for the a
 
 ## Repository files
 
-- `PISA_2025_Mongolia_Rwanda_Insight_Report.ipynb` — full cleaning, analysis, and visualizations
-- `results/` — summary tables from the analysis
-- `requirements.txt` — Python packages used by the notebook
-- `.gitignore` — keeps the large raw data files out of the repository
+- `Python_II_final_project_(Insight_report).ipynb` - full cleaning, analysis, and visualizations
+- `results/` - summary tables from the analysis
+- `requirements.txt` - Python packages used by the notebook
+- `.gitignore` - keeps the large raw data files out of the repository
