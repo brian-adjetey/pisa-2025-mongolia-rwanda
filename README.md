@@ -29,6 +29,12 @@ Shared project files: https://drive.google.com/drive/folders/1Me0GPML6cYotrSabFR
 
 The notebook downloads the source files, selects and cleans the variables used in the analysis, creates the comparison groups, calculates the weighted PISA results, and produces the tables and figures in the report.
 
+To regenerate the compressed raw-analysis extracts and cleaned-data files required for submission, run:
+
+```bash
+python scripts/export_data_artifacts.py --download
+```
+
 Achievement estimates use the final student sampling weight (`W_FSTUWT`). Statistics are calculated separately for each of the 10 plausible values and then averaged. The OECD group is a pooled weighted comparison group rather than the official equal-country OECD average. The analysis is descriptive and associational; formal PISA standard errors and hypothesis tests are not reported because full inference requires replicate-weight procedures beyond the scope of this project.
 
 ## Repository files
@@ -39,6 +45,7 @@ Achievement estimates use the final student sampling weight (`W_FSTUWT`). Statis
 - `data/DATA_DICTIONARY.md` - variables and transformations used in the analysis
 - `data/raw_*_analysis_extract.csv.gz` - uncleaned analysis extracts retaining original PISA variable names and values
 - `data/cleaned_*_analysis.csv.gz` - cleaned analysis files used by the notebook
+- `scripts/export_data_artifacts.py` - reproducibly generates the compressed raw and cleaned analysis files
 - `results/` - summary tables generated from the analysis
 - `requirements.txt` - Python packages used by the notebook
 - `.gitignore` - excludes full raw `.sav` files and temporary files
