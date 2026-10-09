@@ -4,4 +4,3 @@ gdown
 pyreadstat
 matplotlib
 seaborn
-pyarrow
