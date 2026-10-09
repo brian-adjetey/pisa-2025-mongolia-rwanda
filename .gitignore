@@ -1,19 +1,15 @@
-# --- raw data: never committed ---------------------------------------------
-# PISA public-use files are too large for GitHub. The notebook downloads them
-# automatically from the Google Drive links documented in the README.
+# raw data files
 *.sav
 *.zip
 
-# --- course material, not ours to publish ----------------------------------
+# course/project files not for the repo
 requirements/
-
-# --- private working notes -------------------------------------------------
 PROJECT_BRIEF.md
 PROJECT_BRIEF.html
 Brian's Workflow.md
 research questions generally.txt
 
-# --- generated temporary artefacts -----------------------------------------
+# temporary files
 codebook_*.csv
 .ipynb_checkpoints/
 __pycache__/
