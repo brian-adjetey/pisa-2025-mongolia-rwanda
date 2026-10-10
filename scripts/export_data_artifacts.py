@@ -19,6 +19,7 @@ import argparse
 import gdown
 import numpy as np
 import pandas as pd
+import pyreadstat
 
 
 STUDENT_DRIVE_ID = "163VOjSHyLiuVDj4pZRX9g5sSeMBn3FXO"
@@ -91,15 +92,18 @@ def main():
         )
 
     # Read the same source variables selected in the final notebook.
-    student_raw = pd.read_spss(
+    student_raw, _ = pyreadstat.read_sav(
         student_path,
         usecols=STUDENT_COLUMNS,
-        convert_categoricals=False,
+        user_missing=True,
+        apply_value_formats=False,
     )
-    school_raw = pd.read_spss(
+    school_raw, _ = pyreadstat.read_sav(
         school_path,
-        convert_categoricals=False,
-    )[SCHOOL_COLUMNS]
+        user_missing=True,
+        apply_value_formats=False,
+    )
+    school_raw = school_raw[SCHOOL_COLUMNS]
 
     # Save uncleaned analysis extracts with original PISA names and values.
     raw_student_extract = target_raw_rows(student_raw)
