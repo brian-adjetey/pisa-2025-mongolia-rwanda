@@ -58,4 +58,4 @@ Achievement estimates use the final student sampling weight (`W_FSTUWT`). Statis
 
 ## Generative AI acknowledgment
 
-ChatGPT and OpenAI Codex were used for Python debugging, code review, data-quality auditing, reproducibility checks, and editorial feedback. The authors reviewed the code, verified the calculations against the underlying PISA data, and are responsible for the final analysis and interpretation.
+ChatGPT and OpenAI Codex were used for Python debugging, code review, data-quality auditing, reproducibility checks, and editorial feedback. We reviewed the code, verified the calculations against the underlying PISA data, and are responsible for the final analysis and interpretation.
